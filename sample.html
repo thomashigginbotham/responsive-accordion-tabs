@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sample</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
+</head>
+
+<body>
+	<h1>Responsive Accordion Tabs</h1>
+	<p>Accordion on Small Viewports, Tabs on Large Viewports</p>
+
+	<div class="accordion-tabs">
+		<ul class="accordion-tab-headings">
+			<li><a href="#section-1">Heading 1</a></li>
+			<li><a href="#section-2">Heading 2</a></li>
+			<li><a href="#section-3">Heading 3</a></li>
+		</ul>
+
+		<div class="accordion-tab-content">
+			<section id="section-1">
+				<h3>Heading 1</h3>
+				<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque velit unde, porro sint iusto perferendis quisquam similique impedit consequatur mollitia, veritatis. Possimus officia, quaerat assumenda!</p></div>
+			</section>
+
+			<section id="section-2">
+				<h3>Heading 2</h3>
+				<div><p>Nihil, deleniti cum esse incidunt voluptatibus corporis, libero, sapiente voluptates non ut autem dolorum ullam commodi ipsam! Dolores quasi voluptate cum dolore quia nemo, at?</p></div>
+			</section>
+
+			<section id="section-3">
+				<h3>Heading 3</h3>
+				<div><p>Numquam aliquam delectus deleniti quis repellendus alias laboriosam ipsum atque accusantium! Reiciendis obcaecati cupiditate repellat ipsam suscipit necessitatibus sunt eaque et laudantium eligendi, laborum distinctio.</p></div>
+			</section>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="js/jquery.responsive-accordion-tabs.min.js"></script>
+
+	<script>
+		(function() {
+			var $accordionTabs = $('.accordion-tabs');
+
+			$accordionTabs.accordionTabs({
+				// Plugin options
+				mediaQuery: '(min-width: 40em)' // Set when tabs should be used instead of accordion
+			}, {
+				// jQuery UI Accordion options <http://api.jqueryui.com/accordion/>
+				header: 'h3', // Specify the heading level you used (required)
+				heightStyle: 'content'
+			}, {
+				// jQuery UI Tabs options <http://api.jqueryui.com/tabs/>
+				show: {
+					effect: 'fade'
+				}
+			});
+		})();
+	</script>
+</body>
+</html>
